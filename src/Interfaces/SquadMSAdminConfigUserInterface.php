@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use SquadMS\AdminConfig\Models\ServerGroup;
 
-interface AdminConfigUserInterface
+interface SquadMSAdminConfigUserInterface
 {
     public function adminConfigs() : BelongsToMany;
 
