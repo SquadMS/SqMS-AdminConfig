@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use SquadMS\AdminConfig\Http\Controllers\Admin\AdminConfigController;
+use SquadMS\AdminConfig\Http\Controllers\Admin\GroupController;
+use SquadMS\AdminConfig\Http\Controllers\Admin\PermissionController;
+use SquadMS\AdminConfig\Http\Controllers\ConfigController;
+
+/* Remote admin config */
+Route::get('admin-cfg/{adminconfig}', [ConfigController::class, 'remoteAdmin'])->name('remoteAdmin');
 
 Route::group([
     'prefix' => 'admin',
