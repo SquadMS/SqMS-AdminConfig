@@ -46,7 +46,23 @@ class SquadMSModule extends SquadMSModuleContract
                 SquadMSMenu::register(
                     'admin-adminconfig',
                     (new SquadMSMenuEntry('admin.permissions.index', '<i class="bi bi-house-fill"></i> Permissions', true))->setView('sqms-foundation::components.navigation.item')
-                    ->setActive(fn (SquadMSMenuEntry $link) => NavigationHelper::isCurrentRoute('admin.permissions.index'))
+                    ->setActive(fn (SquadMSMenuEntry $link) => NavigationHelper::isCurrentRoute('admin.permissions.*'))
+                    ->setCondition('sqms admin adminconfig manage')
+                    ->setOrder(200)
+                );
+
+                SquadMSMenu::register(
+                    'admin-adminconfig',
+                    (new SquadMSMenuEntry('admin.permissions.index', '<i class="bi bi-house-fill"></i> Groups', true))->setView('sqms-foundation::components.navigation.item')
+                    ->setActive(fn (SquadMSMenuEntry $link) => NavigationHelper::isCurrentRoute('admin.groups.*'))
+                    ->setCondition('sqms admin adminconfig manage')
+                    ->setOrder(200)
+                );
+
+                SquadMSMenu::register(
+                    'admin-adminconfig',
+                    (new SquadMSMenuEntry('admin.adminconfigs.index', '<i class="bi bi-house-fill"></i> AdminConfigs', true))->setView('sqms-foundation::components.navigation.item')
+                    ->setActive(fn (SquadMSMenuEntry $link) => NavigationHelper::isCurrentRoute('admin.groups.*'))
                     ->setCondition('sqms admin adminconfig manage')
                     ->setOrder(200)
                 );
