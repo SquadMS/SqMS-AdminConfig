@@ -40,7 +40,9 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SquadMS\\AdminConfig\\AdminConfigServiceProvider"            ]
+                "SquadMS\\AdminConfig\\AdminConfigServiceProvider",
+                "SquadMS\\AdminConfig\\Providers\\ModulesServiceProvider"
+            ]
         }
     }
 }
