@@ -39,7 +39,7 @@ class SquadMSModule extends SquadMSModuleContract
         switch ($menu) {
             case 'admin-adminconfig':
                 /* Admin Menu */
-                SquadMSMenu::prepend('admin-adminconfig', fn () => View::make('sqms-adminconfig::components.navigation.heading', [
+                SquadMSMenu::prepend('admin-adminconfig', fn () => View::make('sqms-foundation::components.navigation.heading', [
                     'title'  => 'AdminConfig Management',
                 ])->render());
 
