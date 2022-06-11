@@ -1,13 +1,13 @@
 <?php
 
-namespace SquadMS\AdminConfig\Http\Controllers;
+namespace SquadMS\AdminConfig\Http\Controllers\API;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use SquadMS\AdminConfig\Models\AdminConfig;
 use SquadMS\AdminConfig\Services\RemoteAdminConfigService;
 
-class ConfigController extends Controller
+class AdminConfigController extends Controller
 {
     /**
      * Shows the remote admin config
