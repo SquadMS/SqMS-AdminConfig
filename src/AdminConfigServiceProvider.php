@@ -24,6 +24,9 @@ class AdminConfigServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        /* Configuration */
+        $this->mergeConfigFrom(__DIR__.'/../config/sqms-adminconfig.php', 'sqms-adminconfig');
+        
         /* Load Migrations */
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         

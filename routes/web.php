@@ -8,7 +8,7 @@ use SquadMS\AdminConfig\Http\Controllers\Admin\PermissionController;
 Route::group([
     'prefix' => 'admin',
     'as' => 'admin.',
-    'middleware' => ['auth', 'admin', 'noIndex']
+    'middleware' => ['auth', 'can:sqms admin', 'can:sqms admin adminconfig']
 ], function(){
     /* Permissions */
     Route::resource('permissions', PermissionController::class);
