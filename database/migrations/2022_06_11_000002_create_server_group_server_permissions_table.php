@@ -17,10 +17,10 @@ return new class extends Migration
             $table->bigIncrements('id');
 
             $table->unsignedBigInteger('group_id');
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
+            $table->foreign('group_id')->references('id')->on('server_groups')->onDelete('cascade');
 
             $table->unsignedBigInteger('permission_id');
-            $table->foreign('permission_id')->references('id')->on('permissions')->onDelete('cascade');
+            $table->foreign('permission_id')->references('id')->on('server_permissions')->onDelete('cascade');
 
             $table->timestamps();
         });
