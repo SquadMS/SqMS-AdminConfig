@@ -28,13 +28,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class ServerPermission extends Model
 {
     /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'server_permissions';
-
-    /**
      * The attributes that are mass assignable.
      *
      * @var array

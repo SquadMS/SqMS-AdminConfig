@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterGroupsColor extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class AlterGroupsColor extends Migration
      */
     public function up()
     {
-        Schema::table('groups', function (Blueprint $table) {
-            $table->string('color')->default('#18181B');
+        Schema::create('server_permissions', function (Blueprint $table) {
+            $table->bigIncrements('id');
+
+            $table->string('name');
+            $table->string('config_key')->unique();
+
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ class AlterGroupsColor extends Migration
      */
     public function down()
     {
-        Schema::table('groups', function (Blueprint $table) {
-            $table->dropColumn('color');
-        });
+        Schema::dropIfExists('server_permissions');
     }
-}
+};

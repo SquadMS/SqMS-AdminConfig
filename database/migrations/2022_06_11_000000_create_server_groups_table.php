@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGroupsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('groups', function (Blueprint $table) {
+        Schema::create('server_groups', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->string('name');
+            $table->string('color')->default('#18181B');
+
+            $table->boolean('main')->default(false);
+            $table->unsignedBigInteger('importance')->default(0);
 
             $table->timestamps();
         });
@@ -29,6 +33,6 @@ class CreateGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groups');
+        Schema::dropIfExists('server_groups');
     }
-}
+};
