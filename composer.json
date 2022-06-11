@@ -42,6 +42,7 @@
             "providers": [
                 "SquadMS\\AdminConfig\\AdminConfigServiceProvider",
                 "SquadMS\\AdminConfig\\Providers\\EventServiceProvider",
+                "SquadMS\\AdminConfig\\Providers\\FilamentServiceProvider",
                 "SquadMS\\AdminConfig\\Providers\\ModulesServiceProvider",
                 "SquadMS\\AdminConfig\\Providers\\PermissionsServiceProvider",
                 "SquadMS\\AdminConfig\\Providers\\RouteServiceProvider"
