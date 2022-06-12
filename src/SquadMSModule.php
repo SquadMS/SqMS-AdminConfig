@@ -17,19 +17,4 @@ class SquadMSModule extends SquadMSModuleContract
     {
         return 'SquadMS Admin Config';
     }
-
-    public static function publishAssets(): void
-    {
-        //
-    }
-
-    public static function registerMenuEntries(string $menu): void
-    {
-        //
-    }
-
-    public static function schedule(Schedule $schedule): void
-    {
-        //
-    }
 }
