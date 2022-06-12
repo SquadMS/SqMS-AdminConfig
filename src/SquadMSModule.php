@@ -23,11 +23,6 @@ class SquadMSModule extends SquadMSModuleContract
         //
     }
 
-    public static function registerAdminMenus(): void
-    {
-        //
-    }
-
     public static function registerMenuEntries(string $menu): void
     {
         //
