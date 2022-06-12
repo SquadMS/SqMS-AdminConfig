@@ -12,6 +12,8 @@ use Filament\Tables;
 
 class ServerPermissionResource extends Resource
 {
+    protected static ?string $navigationGroup = 'AdmdminConfig Management';
+    
     protected static ?string $model = ServerPermission::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';

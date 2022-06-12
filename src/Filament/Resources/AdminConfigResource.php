@@ -13,6 +13,8 @@ use Filament\Tables;
 
 class AdminConfigResource extends Resource
 {
+    protected static ?string $navigationGroup = 'AdmdminConfig Management';
+
     protected static ?string $model = AdminConfig::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';

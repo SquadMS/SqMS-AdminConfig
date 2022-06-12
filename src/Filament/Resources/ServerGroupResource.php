@@ -14,6 +14,8 @@ use Filament\Tables;
 
 class ServerGroupResource extends Resource
 {
+    protected static ?string $navigationGroup = 'AdmdminConfig Management';
+    
     protected static ?string $model = ServerGroup::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
