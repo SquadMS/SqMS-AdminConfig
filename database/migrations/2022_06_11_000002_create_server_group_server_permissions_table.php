@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreign('server_group_id')->references('id')->on('server_groups')->onDelete('cascade');
 
             $table->unsignedBigInteger('server_permission_id');
-            $table->foreign('server_ermission_id')->references('id')->on('server_permissions')->onDelete('cascade');
+            $table->foreign('server_permission_id')->references('id')->on('server_permissions')->onDelete('cascade');
 
             $table->timestamps();
         });
