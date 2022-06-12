@@ -4,11 +4,11 @@ namespace SquadMS\AdminConfig\Filament\Resources\ServerGroupResource\RelationMan
 
 use Filament\Forms;
 use Filament\Resources\Form;
-use Filament\Resources\RelationManagers\BelongsToManyRelationManager;
+use Filament\Resources\RelationManagers\HasManyThroughRelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
 
-class UsersRelationManager extends BelongsToManyRelationManager
+class UsersRelationManager extends HasManyThroughRelationManager
 {
     protected static string $relationship = 'users';
 

@@ -36,7 +36,7 @@ class AdminConfigResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->sortable(),
-                Tables\Columns\BooleanColumn::make('name')->getStateUsing(fn (AdminConfig $config) => $config->reserved_group_id)->sortable(),
+                Tables\Columns\BooleanColumn::make('reserved')->getStateUsing(fn (AdminConfig $record) => $record->reserved_group_id)->sortable(),
             ])
             ->filters([
                 //
@@ -46,7 +46,7 @@ class AdminConfigResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\AdminConfigEntryRelationManager::class,
         ];
     }
     
