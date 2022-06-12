@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('server_group_server_permissions', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('group_id');
-            $table->foreign('group_id')->references('id')->on('server_groups')->onDelete('cascade');
+            $table->unsignedBigInteger('server_group_id');
+            $table->foreign('server_group_id')->references('id')->on('server_groups')->onDelete('cascade');
 
-            $table->unsignedBigInteger('permission_id');
-            $table->foreign('permission_id')->references('id')->on('server_permissions')->onDelete('cascade');
+            $table->unsignedBigInteger('server_ermission_id');
+            $table->foreign('server_ermission_id')->references('id')->on('server_permissions')->onDelete('cascade');
 
             $table->timestamps();
         });

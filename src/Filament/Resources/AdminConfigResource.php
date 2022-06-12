@@ -21,8 +21,13 @@ class AdminConfigResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\BelongsToSelect::make('reserved_group_id')->relationship('reservedGroup', 'name')->required(),
+                Forms\Components\TextInput::make('name')
+                    ->rules('required|string|min:1|max:255')
+                    ->unique(AdminConfig::class)
+                    ->required(),
+                Forms\Components\BelongsToSelect::make('reserved_group_id')
+                    ->relationship('reservedGroup', 'name')
+                    ->nullable(),
             ]);
     }
 

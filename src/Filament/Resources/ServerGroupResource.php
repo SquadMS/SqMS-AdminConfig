@@ -3,12 +3,14 @@
 namespace SquadMS\AdminConfig\Filament\Resources;
 
 use SquadMS\AdminConfig\Filament\Resources\ServerGroupResource\Pages;
+use SquadMS\AdminConfig\Filament\Resources\ServerGroupResource\RelationManagers;
 use SquadMS\AdminConfig\Models\ServerGroup;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+
 
 class ServerGroupResource extends Resource
 {
@@ -20,8 +22,12 @@ class ServerGroupResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\ColorPicker::make('color')->required(),
+                Forms\Components\TextInput::make('name')
+                    ->rules('required|string|min:1|max:255')
+                    ->required(),
+                Forms\Components\ColorPicker::make('color')
+                    ->rules('required|string|color')
+                    ->required(),
 
                 Forms\Components\Toggle::make('main')->required(),
                 Forms\Components\TextInput::make('importance')->integer()->required(),
@@ -44,7 +50,9 @@ class ServerGroupResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\ServerPermissionsRelationManager::class,
+            RelationManagers\UsersRelationManager::class,
+
         ];
     }
     

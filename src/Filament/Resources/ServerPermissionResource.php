@@ -20,8 +20,12 @@ class ServerPermissionResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\TextInput::make('config_key')->required(),
+                Forms\Components\TextInput::make('name')
+                    ->rules('required|string|min:1|max:255')
+                    ->required(),
+                Forms\Components\TextInput::make('config_key')
+                    ->rules('required|string|min:1|max:255')
+                    ->required(),
             ]);
     }
 
