@@ -2,7 +2,6 @@
 
 namespace SquadMS\AdminConfig;
 
-use Illuminate\Console\Scheduling\Schedule;
 use SquadMS\Foundation\Modularity\Contracts\SquadMSModule as SquadMSModuleContract;
 
 
