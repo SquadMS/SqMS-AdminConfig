@@ -2,18 +2,17 @@
 
 namespace SquadMS\AdminConfig\Filament\Resources;
 
-use SquadMS\AdminConfig\Filament\Resources\AdminConfigResource\Pages;
-use SquadMS\AdminConfig\Filament\Resources\AdminConfigResource\RelationManagers;
-use SquadMS\AdminConfig\Models\AdminConfig;
+use SquadMS\AdminConfig\Filament\Resources\ServerPermissionResource\Pages;
+use SquadMS\AdminConfig\Models\ServerPermission;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 
-class AdminConfigResource extends Resource
+class ServerPermissionResource extends Resource
 {
-    protected static ?string $model = AdminConfig::class;
+    protected static ?string $model = ServerPermission::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -22,7 +21,7 @@ class AdminConfigResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\BelongsToSelect::make('reserved_group_id')->relationship('reservedGroup', 'name')->required(),
+                Forms\Components\TextInput::make('config_key')->required(),
             ]);
     }
 
@@ -31,7 +30,7 @@ class AdminConfigResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->sortable(),
-                Tables\Columns\BooleanColumn::make('name')->getStateUsing(fn (AdminConfig $config) => $config->reserved_group_id)->sortable(),
+                Tables\Columns\TextColumn::make('config_key')->sortable()
             ])
             ->filters([
                 //
@@ -48,9 +47,9 @@ class AdminConfigResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListAdminConfigs::route('/'),
-            'create' => Pages\CreateAdminConfig::route('/create'),
-            'edit' => Pages\EditAdminConfig::route('/{record}/edit'),
+            'index' => Pages\ListServerPermission::route('/'),
+            'create' => Pages\CreateServerPermission::route('/create'),
+            'edit' => Pages\EditServerPermission::route('/{record}/edit'),
         ];
     }
 }

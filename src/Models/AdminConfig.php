@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 use InvalidArgumentException;
+use SquadMS\Foundation\Models\SquadMSUser;
 
 class AdminConfig extends Model
 {
@@ -36,7 +37,7 @@ class AdminConfig extends Model
      */
     public function entries() : HasMany
     {
-        return $this->hasMany('App\AdminConfigEntry');
+        return $this->hasMany(AdminConfigEntry::class);
     }
 
     /**
@@ -44,7 +45,7 @@ class AdminConfig extends Model
      */
     public function reservedGroup() : BelongsTo
     {
-        return $this->belongsTo('App\ServerGroup', 'reserved_group_id');
+        return $this->belongsTo(ServerGroup::class, 'reserved_group_id');
     }
 
     /**
@@ -52,7 +53,7 @@ class AdminConfig extends Model
      */
     public function serverGroups() : BelongsToMany
     {
-        return $this->belongsToMany('App\ServerGroup', 'admin_config_entries');
+        return $this->belongsToMany(ServerGroup::class, 'admin_config_entries');
     }
 
     /**
@@ -60,7 +61,7 @@ class AdminConfig extends Model
      */
     public function users() : BelongsToMany
     {
-        return $this->belongsToMany('App\User', 'admin_config_entries');
+        return $this->belongsToMany(SquadMSUser::class, 'admin_config_entries');
     }
 
     public function addUser(Model $user, ServerGroup $group) : void
@@ -87,10 +88,8 @@ class AdminConfig extends Model
      *
      * @param User $user
      */
-    public function hasUser(Model $user) : bool
+    public function hasUser(SquadMSUser $user) : bool
     {
-        $this->checkUserModel($user);
-
         return $this->users->contains(function ($item, $key) use ($user) {
             return $item->id === $user->id;
         });
