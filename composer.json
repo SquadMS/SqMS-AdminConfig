@@ -45,7 +45,8 @@
                 "SquadMS\\AdminConfig\\Providers\\FilamentServiceProvider",
                 "SquadMS\\AdminConfig\\Providers\\ModulesServiceProvider",
                 "SquadMS\\AdminConfig\\Providers\\PermissionsServiceProvider",
-                "SquadMS\\AdminConfig\\Providers\\RouteServiceProvider"
+                "SquadMS\\AdminConfig\\Providers\\RouteServiceProvider",
+                "SquadMS\\AdminConfig\\Providers\\ValidationServiceProvider"
             ]
         }
     }
