@@ -21,7 +21,7 @@
         "illuminate/cache": "^9.0",
         "nesbot/carbon": "^2.0",
         "yajra/laravel-datatables-oracle": "~9.0",
-        "squadms/foundation": "dev-master"
+        "squadms/foundation": "dev-navigation"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
