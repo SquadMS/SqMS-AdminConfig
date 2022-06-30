@@ -18,13 +18,6 @@ class RouteServiceProvider extends ServiceProvider
         /* Routes */
         $routesPath = __DIR__.'/../../routes';
 
-        /* WEB routes */
-        Route::group([
-            'middleware' => ['web'],
-        ], function () use ($routesPath) {
-            $this->loadRoutesFrom($routesPath.'/web.php');
-        });
-
         /* API routes */
         Route::group([
             'prefix'     => 'api',
