@@ -40,14 +40,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SquadMS\\AdminConfig\\AdminConfigServiceProvider",
-                "SquadMS\\AdminConfig\\Providers\\EventServiceProvider",
-                "SquadMS\\AdminConfig\\Providers\\FilamentServiceProvider",
-                "SquadMS\\AdminConfig\\Providers\\ModulesServiceProvider",
-                "SquadMS\\AdminConfig\\Providers\\PermissionsServiceProvider",
-                "SquadMS\\AdminConfig\\Providers\\RouteServiceProvider",
-                "SquadMS\\AdminConfig\\Providers\\ValidationServiceProvider"
+                "SquadMS\\AdminConfig\\AdminConfigServiceProvider"
             ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "0.0.0/composer-include-files": true
         }
     }
 }
