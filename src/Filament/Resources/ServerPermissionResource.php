@@ -2,18 +2,18 @@
 
 namespace SquadMS\AdminConfig\Filament\Resources;
 
-use SquadMS\AdminConfig\Filament\Resources\ServerPermissionResource\Pages;
-use SquadMS\AdminConfig\Models\ServerPermission;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use SquadMS\AdminConfig\Filament\Resources\ServerPermissionResource\Pages;
+use SquadMS\AdminConfig\Models\ServerPermission;
 
 class ServerPermissionResource extends Resource
 {
     protected static ?string $navigationGroup = 'AdmdminConfig Management';
-    
+
     protected static ?string $model = ServerPermission::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
@@ -36,20 +36,20 @@ class ServerPermissionResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->sortable(),
-                Tables\Columns\TextColumn::make('config_key')->sortable()
+                Tables\Columns\TextColumn::make('config_key')->sortable(),
             ])
             ->filters([
                 //
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [

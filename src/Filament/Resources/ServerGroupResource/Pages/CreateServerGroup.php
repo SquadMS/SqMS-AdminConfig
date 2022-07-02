@@ -2,8 +2,8 @@
 
 namespace SquadMS\AdminConfig\Filament\Resources\ServerGroupResource\Pages;
 
-use SquadMS\AdminConfig\Filament\Resources\ServerGroupResource;
 use Filament\Resources\Pages\CreateRecord;
+use SquadMS\AdminConfig\Filament\Resources\ServerGroupResource;
 
 class CreateServerGroup extends CreateRecord
 {

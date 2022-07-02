@@ -32,7 +32,7 @@ class AdminConfigEntry extends Model
     /**
      * Get the members associated with the clan.
      */
-    public function user() : BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(config('auth.providers.users.model'));
     }
@@ -40,7 +40,7 @@ class AdminConfigEntry extends Model
     /**
      * Get the members associated with the clan.
      */
-    public function adminConfig() : BelongsTo
+    public function adminConfig(): BelongsTo
     {
         return $this->belongsTo(AdminConfig::class);
     }
@@ -48,7 +48,7 @@ class AdminConfigEntry extends Model
     /**
      * Get the members associated with the clan.
      */
-    public function serverGroup() : BelongsTo
+    public function serverGroup(): BelongsTo
     {
         return $this->belongsTo(ServerGroup::class);
     }

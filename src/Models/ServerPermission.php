@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Group[] $groups
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Permission newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Permission newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Permission query()
@@ -23,6 +24,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Permission whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Permission whereUpdatedAt($value)
  * @mixin \Eloquent
+ *
  * @property-read int|null $groups_count
  */
 class ServerPermission extends Model
@@ -40,7 +42,7 @@ class ServerPermission extends Model
     /**
      * Get all of the posts for the country.
      */
-    public function groups() : BelongsToMany
+    public function groups(): BelongsToMany
     {
         return $this->belongsToMany(ServerGroup::class, ServerGroupServerPermission::class);
     }

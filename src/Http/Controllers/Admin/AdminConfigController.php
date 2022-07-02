@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use Yajra\DataTables\Facades\DataTables;
-use SquadMS\AdminConfig\Models\AdminConfig;
-use SquadMS\AdminConfig\Models\AdminConfigEntry;
 use SquadMS\AdminConfig\Http\Requests\AdminConfig\AdminConfigAddMember;
 use SquadMS\AdminConfig\Http\Requests\AdminConfig\AdminConfigRemoveMember;
 use SquadMS\AdminConfig\Http\Requests\AdminConfig\DeleteAdminConfig;
 use SquadMS\AdminConfig\Http\Requests\AdminConfig\DuplicateAdminConfig;
 use SquadMS\AdminConfig\Http\Requests\AdminConfig\StoreAdminConfig;
 use SquadMS\AdminConfig\Http\Requests\AdminConfig\UpdateAdminConfig;
+use SquadMS\AdminConfig\Models\AdminConfig;
+use SquadMS\AdminConfig\Models\AdminConfigEntry;
 use SquadMS\AdminConfig\Models\ServerGroup;
+use Yajra\DataTables\Facades\DataTables;
 
 class AdminConfigController extends Controller
 {
@@ -27,7 +27,7 @@ class AdminConfigController extends Controller
     public function index()
     {
         return view('admin.adminconfigs.index', [
-            'adminConfigs' => AdminConfig::all()
+            'adminConfigs' => AdminConfig::all(),
         ]);
     }
 
@@ -113,9 +113,9 @@ class AdminConfigController extends Controller
         if (($user = Auth::user()) && $user->can('admin servergroups')) {
             $users = $this->getUserModel()->whereNotIn('id', $adminconfig->users->pluck('id'))->where(function ($query) use ($request) {
                 return $query->where('name', 'like', $request->input('q'))
-                ->orWhere('name', 'like', '%' . $request->input('q'))
-                ->orWhere('name', 'like', $request->input('q') . '%')
-                ->orWhere('name', 'like', '%'. $request->input('q') . '%');
+                ->orWhere('name', 'like', '%'.$request->input('q'))
+                ->orWhere('name', 'like', $request->input('q').'%')
+                ->orWhere('name', 'like', '%'.$request->input('q').'%');
             })->get();
 
             return response()->json([
@@ -187,7 +187,7 @@ class AdminConfigController extends Controller
      */
     public function addEntry(AdminConfigAddMember $request, AdminConfig $adminconfig)
     {
-        $user        = $this->getUserModel()->findOrFail($request->validated()['user_id']);
+        $user = $this->getUserModel()->findOrFail($request->validated()['user_id']);
         $serverGroup = ServerGroup::findOrFail($request->validated()['server_group_id']);
 
         if ($adminconfig->hasUser($user)) {
@@ -229,9 +229,10 @@ class AdminConfigController extends Controller
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    protected static function getUserModel() : Model
+    protected static function getUserModel(): Model
     {
         $model = config('auth.providers.users.model');
+
         return new $model();
     }
 }

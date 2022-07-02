@@ -25,7 +25,7 @@ class StorePermission extends FormRequest
     {
         return [
             'name' => 'string',
-            'config_key' => 'string|unique:server_permissions'
+            'config_key' => 'string|unique:server_permissions',
         ];
     }
 }

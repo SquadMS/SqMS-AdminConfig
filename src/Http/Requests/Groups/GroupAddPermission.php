@@ -24,7 +24,7 @@ class GroupAddPermission extends FormRequest
     public function rules()
     {
         return [
-            'permission_id' => 'integer|exists:server_permissions,id'
+            'permission_id' => 'integer|exists:server_permissions,id',
         ];
     }
 }

@@ -2,9 +2,9 @@
 
 namespace SquadMS\AdminConfig\Events\Internal\AdminConfig;
 
-use SquadMS\AdminConfig\Models\AdminConfig;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use SquadMS\AdminConfig\Models\AdminConfig;
 
 class AdminConfigSaving
 {

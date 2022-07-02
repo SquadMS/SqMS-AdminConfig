@@ -2,8 +2,8 @@
 
 namespace SquadMS\AdminConfig\Filament\Resources\AdminConfigResource\Pages;
 
-use SquadMS\AdminConfig\Filament\Resources\AdminConfigResource;
 use Filament\Resources\Pages\CreateRecord;
+use SquadMS\AdminConfig\Filament\Resources\AdminConfigResource;
 
 class CreateAdminConfig extends CreateRecord
 {

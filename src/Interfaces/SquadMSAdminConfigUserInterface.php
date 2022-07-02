@@ -8,15 +8,15 @@ use SquadMS\AdminConfig\Models\ServerGroup;
 
 interface SquadMSAdminConfigUserInterface
 {
-    public function adminConfigs() : BelongsToMany;
+    public function adminConfigs(): BelongsToMany;
 
-    public function adminConfigEntries() : HasMany;
+    public function adminConfigEntries(): HasMany;
 
-    public function getMainGroupAttribute() : ?ServerGroup;
+    public function getMainGroupAttribute(): ?ServerGroup;
 
-    public function clearMainGroupCache() : void;
+    public function clearMainGroupCache(): void;
 
-    public function getReservedAttribute() : bool;
+    public function getReservedAttribute(): bool;
 
-    public function clearReservedCache() : void;
+    public function clearReservedCache(): void;
 }

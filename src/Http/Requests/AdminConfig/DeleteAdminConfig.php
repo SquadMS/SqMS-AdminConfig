@@ -14,6 +14,7 @@ class DeleteAdminConfig extends FormRequest
     public function authorize()
     {
         $adminConfig = $this->route('adminconfig');
+
         return $adminConfig && $this->user()->can('admin servergroups');
     }
 

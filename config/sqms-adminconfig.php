@@ -6,5 +6,5 @@ return [
         'definitions' => [
             'admin adminconfig'                      => 'Grant access to the AdminConfig management',
         ],
-    ]
+    ],
 ];

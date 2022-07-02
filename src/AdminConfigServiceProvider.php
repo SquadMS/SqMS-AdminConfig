@@ -48,7 +48,6 @@ class AdminConfigServiceProvider extends SquadMSModuleServiceProvider
      */
     public function registeringModule(): void
     {
-        
     }
 
     public function bootedModule(): void

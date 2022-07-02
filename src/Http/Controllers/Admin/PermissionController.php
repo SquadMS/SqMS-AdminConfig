@@ -3,10 +3,10 @@
 namespace SquadMS\AdminConfig\Http\Controllers\Admin;
 
 use Illuminate\Routing\Controller;
-use SquadMS\AdminConfig\Models\ServerPermission;
 use SquadMS\AdminConfig\Http\Requests\Permissions\DeletePermission;
 use SquadMS\AdminConfig\Http\Requests\Permissions\StorePermission;
 use SquadMS\AdminConfig\Http\Requests\Permissions\UpdatePermission;
+use SquadMS\AdminConfig\Models\ServerPermission;
 
 class PermissionController extends Controller
 {
@@ -18,7 +18,7 @@ class PermissionController extends Controller
     public function index()
     {
         return view('admin.permissions.index', [
-            'permissions' => ServerPermission::all()
+            'permissions' => ServerPermission::all(),
         ]);
     }
 
@@ -59,7 +59,7 @@ class PermissionController extends Controller
     public function show(ServerPermission $permission)
     {
         return view('admin.permissions.show', [
-            'permission' => $permission
+            'permission' => $permission,
         ]);
     }
 
@@ -72,7 +72,7 @@ class PermissionController extends Controller
     public function edit(ServerPermission $permission)
     {
         return view('admin.permissions.edit', [
-            'permission' => $permission
+            'permission' => $permission,
         ]);
     }
 

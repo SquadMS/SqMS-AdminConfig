@@ -2,8 +2,8 @@
 
 namespace SquadMS\AdminConfig\Http\Controllers\API;
 
-use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use SquadMS\AdminConfig\Models\AdminConfig;
 use SquadMS\AdminConfig\Services\RemoteAdminConfigService;
 

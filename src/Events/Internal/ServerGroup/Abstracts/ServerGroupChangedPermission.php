@@ -12,6 +12,7 @@ abstract class ServerGroupChangedPermission
     use Dispatchable, SerializesModels;
 
     public ServerGroup $group;
+
     public ServerPermission $permission;
 
     /**

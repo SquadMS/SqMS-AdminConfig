@@ -14,6 +14,7 @@ class UpdateAdminConfig extends FormRequest
     public function authorize()
     {
         $adminConfig = $this->route('adminconfig');
+
         return $adminConfig && $this->user()->can('admin servergroups');
     }
 
@@ -40,7 +41,7 @@ class UpdateAdminConfig extends FormRequest
     {
         $validated = parent::validated();
 
-        if (!$this->has('main')) {
+        if (! $this->has('main')) {
             $validated['main'] = false;
         }
 

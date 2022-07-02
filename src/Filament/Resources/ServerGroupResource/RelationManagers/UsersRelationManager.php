@@ -2,7 +2,6 @@
 
 namespace SquadMS\AdminConfig\Filament\Resources\ServerGroupResource\RelationManagers;
 
-use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\HasManyThroughRelationManager;
 use Filament\Resources\Table;
@@ -35,7 +34,7 @@ class UsersRelationManager extends HasManyThroughRelationManager
             ->columns([
                 Tables\Columns\ImageColumn::make('avatar')->sortable(),
                 Tables\Columns\TextColumn::make('name')->sortable(),
-                Tables\Columns\TextColumn::make('steam_id_64')->sortable()
+                Tables\Columns\TextColumn::make('steam_id_64')->sortable(),
             ])
             ->filters([
                 //

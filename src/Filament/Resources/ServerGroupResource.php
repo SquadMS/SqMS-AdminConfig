@@ -2,20 +2,19 @@
 
 namespace SquadMS\AdminConfig\Filament\Resources;
 
-use SquadMS\AdminConfig\Filament\Resources\ServerGroupResource\Pages;
-use SquadMS\AdminConfig\Filament\Resources\ServerGroupResource\RelationManagers;
-use SquadMS\AdminConfig\Models\ServerGroup;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-
+use SquadMS\AdminConfig\Filament\Resources\ServerGroupResource\Pages;
+use SquadMS\AdminConfig\Filament\Resources\ServerGroupResource\RelationManagers;
+use SquadMS\AdminConfig\Models\ServerGroup;
 
 class ServerGroupResource extends Resource
 {
     protected static ?string $navigationGroup = 'AdmdminConfig Management';
-    
+
     protected static ?string $model = ServerGroup::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
@@ -42,13 +41,13 @@ class ServerGroupResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')->sortable(),
                 Tables\Columns\BooleanColumn::make('main')->sortable(),
-                Tables\Columns\TextColumn::make('importance')->sortable()
+                Tables\Columns\TextColumn::make('importance')->sortable(),
             ])
             ->filters([
                 //
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
@@ -57,7 +56,7 @@ class ServerGroupResource extends Resource
 
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [

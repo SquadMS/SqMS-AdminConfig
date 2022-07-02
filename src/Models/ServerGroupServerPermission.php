@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $server_permission_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\GroupPermission newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\GroupPermission newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\GroupPermission query()
@@ -21,6 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\GroupPermission wherePermissionId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\GroupPermission whereUpdatedAt($value)
  * @mixin \Eloquent
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ServerGroupServerPermission whereServerGroupId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\ServerGroupServerPermission whereServerPermissionId($value)
  */

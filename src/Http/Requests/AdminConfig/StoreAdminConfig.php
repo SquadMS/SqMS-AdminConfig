@@ -3,7 +3,6 @@
 namespace SquadMS\AdminConfig\Http\Requests\AdminConfig;
 
 use Illuminate\Foundation\Http\FormRequest;
-use SquadMS\AdminConfig\AdminConfig;
 
 class StoreAdminConfig extends FormRequest
 {
@@ -40,7 +39,7 @@ class StoreAdminConfig extends FormRequest
     {
         $validated = parent::validated();
 
-        if (!$this->has('main')) {
+        if (! $this->has('main')) {
             $validated['main'] = false;
         }
 

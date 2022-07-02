@@ -2,8 +2,8 @@
 
 namespace SquadMS\AdminConfig\Filament\Resources\ServerPermissionResource\Pages;
 
-use SquadMS\AdminConfig\Filament\Resources\ServerPermissionResource;
 use Filament\Resources\Pages\ListRecords;
+use SquadMS\AdminConfig\Filament\Resources\ServerPermissionResource;
 
 class ListServerPermission extends ListRecords
 {

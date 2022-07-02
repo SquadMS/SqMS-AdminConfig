@@ -8,5 +8,5 @@ Route::group([
     'middleware' => 'api',
 ], function () {
     /* Remote admin config */
-Route::get('admin-cfg/{adminconfig}', [AdminConfigController::class, 'remoteAdmin'])->name('remoteAdmin');
+    Route::get('admin-cfg/{adminconfig}', [AdminConfigController::class, 'remoteAdmin'])->name('remoteAdmin');
 });

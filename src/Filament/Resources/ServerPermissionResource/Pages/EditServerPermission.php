@@ -2,8 +2,8 @@
 
 namespace SquadMS\AdminConfig\Filament\Resources\ServerPermissionResource\Pages;
 
-use SquadMS\AdminConfig\Filament\Resources\ServerPermissionResource;
 use Filament\Resources\Pages\EditRecord;
+use SquadMS\AdminConfig\Filament\Resources\ServerPermissionResource;
 
 class EditServerPermission extends EditRecord
 {

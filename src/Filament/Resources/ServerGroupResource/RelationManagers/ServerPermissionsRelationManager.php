@@ -2,7 +2,6 @@
 
 namespace SquadMS\AdminConfig\Filament\Resources\ServerGroupResource\RelationManagers;
 
-use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\BelongsToManyRelationManager;
 use Filament\Resources\Table;
@@ -33,7 +32,7 @@ class ServerPermissionsRelationManager extends BelongsToManyRelationManager
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')->sortable()
+                Tables\Columns\TextColumn::make('name')->sortable(),
             ])
             ->filters([
                 //

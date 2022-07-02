@@ -2,14 +2,14 @@
 
 namespace SquadMS\AdminConfig\Filament\Resources;
 
-use SquadMS\AdminConfig\Filament\Resources\AdminConfigResource\Pages;
-use SquadMS\AdminConfig\Filament\Resources\AdminConfigResource\RelationManagers;
-use SquadMS\AdminConfig\Models\AdminConfig;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use SquadMS\AdminConfig\Filament\Resources\AdminConfigResource\Pages;
+use SquadMS\AdminConfig\Filament\Resources\AdminConfigResource\RelationManagers;
+use SquadMS\AdminConfig\Models\AdminConfig;
 
 class AdminConfigResource extends Resource
 {
@@ -44,14 +44,14 @@ class AdminConfigResource extends Resource
                 //
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             RelationManagers\AdminConfigEntryRelationManager::class,
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [

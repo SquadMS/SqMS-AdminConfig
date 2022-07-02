@@ -3,15 +3,15 @@
 namespace SquadMS\AdminConfig\Http\Controllers\Admin;
 
 use Illuminate\Routing\Controller;
-use SquadMS\AdminConfig\Models\ServerGroup;
-use SquadMS\AdminConfig\Models\ServerPermission;
 use SquadMS\AdminConfig\Events\Internal\ServerGroup\ServerGroupAddedPermission;
 use SquadMS\AdminConfig\Events\Internal\ServerGroup\ServerGroupRemovedPermission;
-use SquadMS\AdminConfig\Http\Requests\Groups\StoreGroup;
-use SquadMS\AdminConfig\Http\Requests\Groups\UpdateGroup;
 use SquadMS\AdminConfig\Http\Requests\Groups\DeleteGroup;
 use SquadMS\AdminConfig\Http\Requests\Groups\GroupAddPermission;
 use SquadMS\AdminConfig\Http\Requests\Groups\GroupRemovePermission;
+use SquadMS\AdminConfig\Http\Requests\Groups\StoreGroup;
+use SquadMS\AdminConfig\Http\Requests\Groups\UpdateGroup;
+use SquadMS\AdminConfig\Models\ServerGroup;
+use SquadMS\AdminConfig\Models\ServerPermission;
 
 class GroupController extends Controller
 {
@@ -23,7 +23,7 @@ class GroupController extends Controller
     public function index()
     {
         return view('admin.groups.index', [
-            'groups' => ServerGroup::all()
+            'groups' => ServerGroup::all(),
         ]);
     }
 
@@ -53,7 +53,7 @@ class GroupController extends Controller
 
         /* Redirect to edit page */
         return redirect(route('admin.groups.edit', [
-            'group' => $group
+            'group' => $group,
         ]))->withSuccess('Server Gruppe erfolgreich erstellt.');
     }
 
@@ -66,7 +66,7 @@ class GroupController extends Controller
     public function show(ServerGroup $group)
     {
         return view('admin.groups.show', [
-            'group' => $group
+            'group' => $group,
         ]);
     }
 
@@ -139,7 +139,7 @@ class GroupController extends Controller
         if ($group->hasPermission($permission->config_key)) {
             return redirect()->back()->withErrors('Das Recht wurde der Gruppe bereits hinzugefügt.');
         }
-        
+
         /* Add to group */
         $group->permissions()->attach($permission);
 
@@ -147,7 +147,7 @@ class GroupController extends Controller
 
         /* Redirect back to clans list */
         return redirect(route('admin.groups.edit', [
-            'group' => $group
+            'group' => $group,
         ]))->withSuccess('Recht erfolgreich zu Server Gruppe hinzugefügt.');
     }
 
@@ -170,7 +170,7 @@ class GroupController extends Controller
 
         /* Redirect back to clans list */
         return redirect(route('admin.groups.edit', [
-            'group' => $group
+            'group' => $group,
         ]))->withSuccess('Recht erfolgreich von Server Gruppe entfernt.');
     }
 }

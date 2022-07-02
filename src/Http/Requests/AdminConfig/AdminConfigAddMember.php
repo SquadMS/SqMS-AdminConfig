@@ -14,6 +14,7 @@ class AdminConfigAddMember extends FormRequest
     public function authorize()
     {
         $adminConfig = $this->route('adminconfig');
+
         return $adminConfig && $this->user()->can('admin servergroups');
     }
 
@@ -26,7 +27,7 @@ class AdminConfigAddMember extends FormRequest
     {
         return [
             'user_id'         => 'required|integer|exists:users,id',
-            'server_group_id' => 'required|integer|exists:server_groups,id'
+            'server_group_id' => 'required|integer|exists:server_groups,id',
         ];
     }
 }
